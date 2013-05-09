@@ -5,10 +5,12 @@ class User < ActiveRecord::Base
   end
 
   def self.create_from_omniauth(auth)
+    name = auth["info"]["nickname"]
     create! do |user|
       user.provider = auth["provider"]
       user.uid = auth["uid"]  
-      user.name = auth["info"]["nickname"]
+      user.name = name
+      user.subdomain = name.downcase 
     end
   end
 end

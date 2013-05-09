@@ -11,7 +11,7 @@
     <div id="user_nav">
       <% if current_user %>
         Signed in as <%= current_user.name %>!
-        <%= link_to "Go to my page", root_url(subdomain: current_user.name) %>
+        <%= link_to "Go to my page", root_url(subdomain: current_user.subdomain) %>
         <%= link_to "Sign out", signout_path %>
       <% else %>
         <%= link_to "Sign in with Twitter", "/auth/twitter" %>
