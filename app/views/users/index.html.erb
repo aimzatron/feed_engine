@@ -1,0 +1,9 @@
+<h1>Users</h1>
+
+<% @users.each do |user|
+  <div class="profile">
+    <h2>
+      <%= link_to user.name, root_url(subdomain: user.name) %>
+    </h2>
+  </div>
+<% end %>

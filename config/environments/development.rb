@@ -1,4 +1,5 @@
 FeedEngine::Application.configure do
+  config.action_dispatch.tld_length = 5
   # Settings specified here will take precedence over those in config/application.rb
 
   # In the development environment your application's code is reloaded on
