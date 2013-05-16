@@ -1,0 +1,11 @@
+
+<!-- ************************ TEXT POST ************************ -->
+<%= simple_form_for @tl_text do |f| %>
+  <div id="textpost" style=display:none >
+    <%= f.text_area :content, label: "512 character limit", :rows => 6, :cols => 30 %>
+    <%= f.submit "Submit" %>
+  </div>
+  <input name="text" id="messagetick2" type="checkbox" value="yes" />Text &nbsp;
+<% end %>
+
+

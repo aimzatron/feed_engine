@@ -10,19 +10,11 @@
           </ul>
         </div> <!--end of .links-inline -->
         <div id="content">
-          <div class="item" id="tweet-sample"></div> <!--end of #tweet-sample -->
-          <div class="item" id="textpost-sample"></div> <!--end of #extpost-sample -->
-          <div class="item" id="imgpost-sample"></div> <!--end of #imgpost-sample -->
-          <div class="item" id="linkpost-sample"></div> <!--end of #linkpost-sample -->
-          <div class="item" id="albumart-sample"></div> <!--end of #albumart-sample -->
-          <div class="item" id="soundcloud-sample"></div> <!--end of #souncloud-sample -->
-          <div class="item" id="textpost-sample"></div> <!--end of #extpost-sample -->
-          <div class="item" id="linkpost-sample"></div> <!--end of #linkpost-sample -->
-          <div class="item" id="imgpost-sample"></div> <!--end of #imgpost-sample -->
-          <div class="item" id="tweet-sample"></div> <!--end of #tweet-sample -->
-          <div class="item" id="soundcloud-sample"></div> <!--end of #souncloud-sample -->
-          <div class="item" id="albumart-sample"></div> <!--end of #albumart-sample -->
-          <%= yield %>
+          <!-- Want each text feed item to be put in a div with the text styling -->
+          <% @feeds.each do |feed| %>
+            <%= render feed.type.downcase, feed: feed %>
+          <% end %>
+        </div>
         </div> <!--end of #masonry-container -->
       </div> <!--end of .innertube -->
     </div> <!--end of #contentcolumn -->
@@ -31,43 +23,15 @@
     <div class="innertube">
       <div id="personal-profile">
         <h1><b>Personal Profile</b></h1>
-        <p>Donec id elit non mi porta gravida at eget metus. Aenean lacinia bibendum nulla sed consectetur.</p>
+        <p>I love TuneLine yes I do</p>
       <div> <!--end of #personal-profile -->
       <div id="user-posting">
         <h1>This is my profile!</h1>
         <h2>Feed:</h2>
-        <% @feeds.each do |feed| %>
-          <%= render feed.type.downcase, feed: feed %>
-        <% end %>
         <hr>
 
-<%= form_for @tl_text do |f| %>
-  <div class="field">
-    <%= f.label :post%><br />
-    <%= f.text_area :content %>
-  </div>
-  <%= f.submit "Submit" %>
-<% end %>
-        <form name="wallpost" action="#" method="post">
-          <input name="text" id="messagetick2" type="checkbox" value="yes" />Text &nbsp;
-          <input name="link" id="messagetick2" type="checkbox" value="yes" />Link &nbsp;
-          <input name="image" id="messagetick2" type="checkbox" value="yes" />Image &nbsp;
-          <div id="textpost" style=display:none;>Please type your message.
-            <textarea name="setmessage" cols="23" rows="5"></textarea>
-            <input type="submit" value="Post">
-          </div> <!--end of #textpost -->
-          <div id="linkpost" style=display:none;>Please type your message.
-            <input type="text" name="link" value="Enter your link here"><br>
-            <textarea name="setmessage" cols="23" rows="5"></textarea>
-            <input type="submit" value="Post">
-          </div> <!--end of #linkpost -->
-          <div id="imagepost" style=display:none;>Please type your message.
-            <input type="text" name="img"><br>
-            <input type="submit" value="Upload">
-            <textarea name="setmessage" cols="23" rows="5"></textarea>
-            <input type="submit" value="Post">
-          </div> <!--end of #imagepost -->
-        </form> <!--end of form 'wallpost' -->
+        <%= render 'user_post' %>
+
       </div> <!--end of #user-postin -->
       <div id="soundcloud-player">
         <h2>Soundcloud Player</h2>
@@ -75,11 +39,11 @@
     </div> <!--end of #innertube -->
   </div><!--end of #leftcolumn -->
 </div> <!--end of #maincontainer -->
- <script>
+<script>
   $('input[type="checkbox"]').on('change', function () {
     $('#' + this.name + 'post').slideToggle(this.checked)
                                    .siblings('div')
                                    .slideUp();
     $(this).siblings('input').prop('checked', false);
     });
-  </script>
+</script> 

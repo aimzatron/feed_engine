@@ -28,7 +28,7 @@ class FeedItem < ActiveRecord::Base
   end
 end
 
-  #(SHARED_ATTRS + UNIQUE_API_ATTRS).each do |key|
+  #(SHARED_ATTRS).each do |key|
   #  attr_accessible key
   #  scope "has_#{key}", lambda { |value| where("data @> hstore(?, ?)", key, value) }
 

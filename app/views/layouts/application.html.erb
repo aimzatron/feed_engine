@@ -13,7 +13,7 @@
       <div id="topsection">
         <div class="innertube">
           <div id="logo">
-            <h1>Tuneline</h1>
+            <h1><%= link_to "Tuneline", root_path %></h1>
           </div>
           <div id="login">
             <% if current_user %>
@@ -31,13 +31,6 @@
         </div> <!--end of .innertube -->
       </div> <!--end of #topsection -->
       <%= yield %>
+    </div> <!--end of #maincontainer -->
   </body>
-  <script>
-    $('input[type="checkbox"]').on('change', function () {
-      $('#' + this.name + 'post').slideToggle(this.checked)
-                                     .siblings('div')
-                                     .slideUp();
-      $(this).siblings('input').prop('checked', false);
-    });
-  </script>
 </html>

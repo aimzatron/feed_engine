@@ -1,138 +1,98 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <link href='http://fonts.googleapis.com/css?family=Oswald:400,300' rel='stylesheet' type='text/css'>
-    <title>FeedEngine</title>
-    <%= stylesheet_link_tag    "application", :media => "all" %>
-    <%= javascript_include_tag "application" %>
-    <%= javascript_include_tag "soundcloud" %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
-    <div id="maincontainer">
-      <div id="topsection">
-        <div class="innertube">
-          <div id="logo">
-            <h1>Tuneline</h1>
-          </div>
-          <div id="login">
-            <% if current_user %>
-              Signed in as <%= current_user.name %>!
-              <%= link_to "Go to my page", root_url(subdomain: current_user.subdomain) %>
-              <%= link_to "Sign out", signout_path %>
-              <!-- render template for header nav -->
-            <% else %>
-              <%= link_to "Sign in with Twitter", "/auth/twitter" %>
-            <% end %>
-          </div> <!--end of #login -->
-          <% flash.each do |name, msg| %>
-            <%= content_tag :div, msg, id: "flash_#{name}" %>
-          <% end %>
-        </div> <!--end of .innertube -->
-      </div> <!--end of #topsection -->
-      <div id="contentwrapper">
-        <div id="homepage-contentcolumn">
-          <div class="innertube">
-            <div class="links-inline">
-              <ul>
-                <li><a href="#">All</a></li>  
-                <li><a href="#">Re-Feeds</a></li>  
-                <li><a href="#">Mics</a></li>
-              </ul>
-            </div> <!--end of .links-inline -->
-            <div id="content">
+<div id="contentwrapper">
+  <div id="homepage-contentcolumn">
+    <div class="innertube">
+      <div class="links-inline">
+        <ul>
+          <li><a href="#">All</a></li>  
+          <li><a href="#">Tweets</a></li>  
+          <li><a href="#">Posts</a></li>
+          <li><a href="#">Images</a></li>
+          <li><a href="#">Artists</a></li>
+          <li><a href="#">Soundclouds</a></li>
+        </ul>
+      </div> <!--end of .links-inline -->
+      <div id="content">
 
-            <!-- *************** Sample Set 1 *************** -->
-              <div class="item" id="tweet-sample">
-                <div id="tweet-content">
-                </div> <!--end of #tweet-content -->
-              </div> <!--end of #tweet-sample -->
-              <div class="item" id="textpost-sample">
-                <div id="textpost-content">
-                </div><!--end of #textpost-content -->
-              </div> <!--end of #textpost-sample -->
-              <div class="item" id="imgpost-sample">
-                <div id="imgpost-content">
-                </div><!--end of #imgpost-content -->
-              </div> <!--end of #imgpost-sample -->
-              <div class="item" id="linkpost-sample">
-                <div id="linkpost-content">
-                </div><!--end of #linkpost-content -->
-              </div> <!--end of #linkpost-sample -->
-              <div class="item" id="albumart-sample">
-                 <div id="albumart-content">
-                </div><!--end of #albumart-content -->
-              </div> <!--end of #albumart-sample -->
-              <div class="item" id="soundcloud-sample">
-                <div id="soundcloud-content">
-                </div><!--end of #soundcloud-content -->
-              </div> <!--end of #souncloud-sample -->
+      <!-- *************** Sample Set 1 *************** -->
+        <div class="item" id="tweet-sample">
+          <div id="tweet-content">
+          </div> <!--end of #tweet-content -->
+        </div> <!--end of #tweet-sample -->
+        <div class="item" id="textpost-sample">
+          <div id="textpost-content">
+          </div><!--end of #textpost-content -->
+        </div> <!--end of #textpost-sample -->
+        <div class="item" id="imgpost-sample">
+          <div id="imgpost-content">
+          </div><!--end of #imgpost-content -->
+        </div> <!--end of #imgpost-sample -->
+        <div class="item" id="linkpost-sample">
+          <div id="linkpost-content">
+          </div><!--end of #linkpost-content -->
+        </div> <!--end of #linkpost-sample -->
+        <div class="item" id="albumart-sample">
+           <div id="albumart-content">
+          </div><!--end of #albumart-content -->
+        </div> <!--end of #albumart-sample -->
+        <div class="item" id="soundcloud-sample">
+          <div id="soundcloud-content">
+          </div><!--end of #soundcloud-content -->
+        </div> <!--end of #souncloud-sample -->
 
-            <!-- *************** Sample Set 2 *************** -->
-              <div class="item" id="textpost-sample">
-                <div id="textpost-content">
-                </div><!--end of #textpost-content -->
-              </div> <!--end of #textpost-sample -->
-              <div class="item" id="tweet-sample">
-                <div id="tweet-content">
-                </div> <!--end of #tweet-content -->
-              </div> <!--end of #tweet-sample -->
-              <div class="item" id="linkpost-sample">
-                <div id="linkpost-content">
-                </div><!--end of #linkpost-content -->
-              </div> <!--end of #linkpost-sample -->
-              <div class="item" id="imgpost-sample">
-                <div id="imgpost-content">
-                </div><!--end of #imgpost-content -->
-              </div> <!--end of #imgpost-sample -->
-              <div class="item" id="albumart-sample">
-                 <div id="albumart-content">
-                </div><!--end of #albumart-content -->
-              </div> <!--end of #albumart-sample -->
-              <div class="item" id="soundcloud-sample">
-                <div id="soundcloud-content">
-                </div><!--end of #soundcloud-content -->
-              </div> <!--end of #souncloud-sample -->
-            
-            <!-- *************** Sample Set 3 *************** -->
-              <div class="item" id="soundcloud-sample">
-                <div id="soundcloud-content">
-                </div><!--end of #soundcloud-content -->
-              </div> <!--end of #souncloud-sample -->
-              <div class="item" id="textpost-sample">
-                <div id="textpost-content">
-                </div><!--end of #textpost-content -->
-              </div> <!--end of #textpost-sample -->
-              <div class="item" id="imgpost-sample">
-                <div id="imgpost-content">
-                </div><!--end of #imgpost-content -->
-              </div> <!--end of #imgpost-sample -->
-              <div class="item" id="linkpost-sample">
-                <div id="linkpost-content">
-                </div><!--end of #linkpost-content -->
-              </div> <!--end of #linkpost-sample -->
-              <div class="item" id="tweet-sample">
-                <div id="tweet-content">
-                </div> <!--end of #tweet-content -->
-              </div> <!--end of #tweet-sample -->
-              <div class="item" id="albumart-sample">
-                 <div id="albumart-content">
-                </div><!--end of #albumart-content -->
-              </div> <!--end of #albumart-sample -->
-              
-              <%= yield %>
-            </div> <!--end of #masonry-container -->
-          </div> <!--end of .innertube -->
-        </div> <!--end of #contentcolumn -->
-      </div> <!--end of #contentwrapper -->
-    </div> <!--end of #maincontainer -->
-  </body>
-  <script>
- $('input[type="checkbox"]').on('change', function () {
-    $('#' + this.name + 'post').slideToggle(this.checked)
-                                   .siblings('div')
-                                   .slideUp();
-    $(this).siblings('input').prop('checked', false);
-    });
-  </script>
-</html>
+      <!-- *************** Sample Set 2 *************** -->
+        <div class="item" id="textpost-sample">
+          <div id="textpost-content">
+          </div><!--end of #textpost-content -->
+        </div> <!--end of #textpost-sample -->
+        <div class="item" id="tweet-sample">
+          <div id="tweet-content">
+          </div> <!--end of #tweet-content -->
+        </div> <!--end of #tweet-sample -->
+        <div class="item" id="linkpost-sample">
+          <div id="linkpost-content">
+          </div><!--end of #linkpost-content -->
+        </div> <!--end of #linkpost-sample -->
+        <div class="item" id="imgpost-sample">
+          <div id="imgpost-content">
+          </div><!--end of #imgpost-content -->
+        </div> <!--end of #imgpost-sample -->
+        <div class="item" id="albumart-sample">
+           <div id="albumart-content">
+          </div><!--end of #albumart-content -->
+        </div> <!--end of #albumart-sample -->
+        <div class="item" id="soundcloud-sample">
+          <div id="soundcloud-content">
+          </div><!--end of #soundcloud-content -->
+        </div> <!--end of #souncloud-sample -->
+      
+      <!-- *************** Sample Set 3 *************** -->
+        <div class="item" id="soundcloud-sample">
+          <div id="soundcloud-content">
+          </div><!--end of #soundcloud-content -->
+        </div> <!--end of #souncloud-sample -->
+        <div class="item" id="textpost-sample">
+          <div id="textpost-content">
+          </div><!--end of #textpost-content -->
+        </div> <!--end of #textpost-sample -->
+        <div class="item" id="imgpost-sample">
+          <div id="imgpost-content">
+          </div><!--end of #imgpost-content -->
+        </div> <!--end of #imgpost-sample -->
+        <div class="item" id="linkpost-sample">
+          <div id="linkpost-content">
+          </div><!--end of #linkpost-content -->
+        </div> <!--end of #linkpost-sample -->
+        <div class="item" id="tweet-sample">
+          <div id="tweet-content">
+          </div> <!--end of #tweet-content -->
+        </div> <!--end of #tweet-sample -->
+        <div class="item" id="albumart-sample">
+           <div id="albumart-content">
+          </div><!--end of #albumart-content -->
+        </div> <!--end of #albumart-sample -->
+        
+        <%= yield %>
+      </div> <!--end of #masonry-container -->
+    </div> <!--end of .innertube -->
+  </div> <!--end of #contentcolumn -->
+</div> <!--end of #contentwrapper -->
