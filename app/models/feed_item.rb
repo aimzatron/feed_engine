@@ -6,7 +6,7 @@ class FeedItem < ActiveRecord::Base
 
   def method_missing(method, *args)
     if valid_attrs.include?(method.to_s) && method.to_s.include?('=')
-      self.data[method.to_s] = args.first
+      self.data[method] = args.first
     elsif valid_attrs.include?(method.to_s)
       data && data[method.to_s]
     else

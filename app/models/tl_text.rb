@@ -1,4 +1,6 @@
 class TlText < FeedItem
+  validates_presence_of :content, :message => "Your submission can't be empty"
+  validates_length_of :content, :maximum => 512
 
   #def self.update_twitter_feed_items
   #  User.all.each do |user|
@@ -10,7 +12,7 @@ class TlText < FeedItem
   #end
 
   def self.create_from_form(input)
-    create! do |tl_text|
+    create do |tl_text|
       tl_text.data["content"] = input["content"]
     end
   end
