@@ -36,4 +36,14 @@ FeedEngine::Application.configure do
 
   # Expands the lines which load the assets
   config.assets.debug = true
+
+  #Paperclip settings
+  config.paperclip_defaults = {
+    :storage => :s3,
+    :s3_credentials => {
+      :bucket => 'tl_images',
+      :access_key_id => 'AKIAJ6WNNJP26WT5XVVA',
+      :secret_access_key => '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'
+    }
+  }
 end

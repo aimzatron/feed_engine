@@ -45,4 +45,24 @@
                                    .slideUp();
     $(this).siblings('input').prop('checked', false);
     });
-</script> 
+</script>
+
+<% @feeds.each do |feed| %>
+  <%= render feed.type.downcase, feed: feed %>
+<% end %>
+
+<hr>
+
+<%= form_for @tl_text do |f| %>
+  <div class="field">
+    <%= f.label :post %><br />
+    <%= f.text_area :content %>
+  </div>
+  <%= f.submit "Submit" %>
+<% end %>
+
+<%= form_for @tl_image, :html => { :multipart => true } do |form| %>
+  <%= form.label :photo %>
+  <%= form.file_field :photo %>
+  <%= form.submit "Submit" %>
+<% end %>
