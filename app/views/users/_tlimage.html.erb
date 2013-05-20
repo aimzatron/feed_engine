@@ -3,8 +3,9 @@
     <div class="user-thumbnail">
     </div><!--end of .user-thumbnail -->
     <%= render "user_details", :feed => feed %>
-    <%= feed.content %><br />
+    <%= feed.content %>
     <div class="feed-item-image">
+      <%= image_tag feed.photo.url %><br />
     </div>
   </div><!--end of .text-post-box -->
 </div><!--end of .item text-post -->

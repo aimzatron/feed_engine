@@ -4,7 +4,7 @@
     </div><!--end of .user-thumbnail -->
     <%= render "user_details", :feed => feed %>
     <div class="link-box">
-      <p><%= link_to feed.link %></p><br />
+      <p><%= link_to feed.link, "http://#{feed.link}", :target => "_blank" %></p><br />
       <p><%= feed.content %></p><br />
     </div><!--end of .link-box -->
   </div>

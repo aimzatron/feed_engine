@@ -54,6 +54,10 @@ margin: 5px; /*Margins for inner DIV inside each column (to provide padding)*/
 margin-top: 0;
 }
 
+.dropdown{
+  display: none;
+}
+
 .links-inline li {
   display: inline;
 }
@@ -91,7 +95,8 @@ margin-top: 0;
   width: 320px;
   height: 340px;
   font-size: medium;
-  background: #ffffff
+  background: #ffffff;
+  word-wrap: break-word;
 }
 
 .user-thumbnail {
@@ -142,6 +147,7 @@ margin-top: 0;
   width: 330px;
   height: 480px;
   background: #ff5763;
+  word-wrap: break-word;
 }
 
 .img-post {
@@ -167,7 +173,11 @@ margin-top: 0;
   margin: 5px;
   width: 310px;
   height: 280px;
-  background: #fb3b49;
+}
+
+.feed-item-image img {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 #linkpost-sample {
@@ -189,6 +199,12 @@ margin-top: 0;
   width: 340px;
   height: 280px;
   background: #5d5d5d;
+  word-wrap: break-word;
+}
+
+.text-content {
+  max-width: 100%;
+  max-height: 100%;
 }
 
 .link-post-box {

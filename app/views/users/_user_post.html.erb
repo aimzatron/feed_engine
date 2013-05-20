@@ -1,29 +1,49 @@
-
-<!-- ************************ TEXT POST ************************ -->
-<%= simple_form_for @tl_text do |f| %>
-  <div id="textpost" style=display:none >
+<div class="radio-perk"><input class="perkdrop" id="tab1" type="radio" name="amount" value="250"><label for="tab1">Text Post</label>
+</div>
+<div id="tabs-250" class="dropdown">
+   <%= simple_form_for @tl_text do |f| %>
     <%= f.text_area :content, label: "512 character limit", placeholder: "512 character limit", :rows => 6, :cols => 30 %>
     <%= f.submit "Submit" %>
-  </div>
-  <input name="text" id="text_checkbox" type="checkbox" value="yes" />Text &nbsp;
-<% end %>
+  <% end %>
+</div>
 
-<!-- ************************ LINK POST ************************ -->
-<%= simple_form_for @tl_link do |f| %>
-  <div id="linkpost" style=display:none >
+
+<div class="radio-perk"><input class="perkdrop" id="tab1" type="radio" name="amount" value="250"><label for="tab1">Link Post</label>
+</div>
+<div id="tabs-250" class="dropdown">
+   <%= simple_form_for @tl_link do |f| %>
     <%= f.input :link, label: "Please enter link here" %>
     <%= f.text_area :content, :rows => 6, :cols => 30 %>
     <%= f.submit "Submit" %>
-  </div>
-  <input name="link" id="link_checkbox" type="checkbox" value="yes" />Link &nbsp;
 <% end %>
-  
-<!-- ************************ IMAGE POST ************************ -->
-<%= simple_form_for @tl_image do |f| %>
-  <div id="imagepost" style=display:none >
-    <%= f.file_field :image %>
-    <%= f.text_area :content, :rows => 6, :cols => 30 %>
+</div>
+
+<div class="radio-perk"><input class="perkdrop" id="tab1" type="radio" name="amount" value="250"><label for="tab1">Image Post</label>
+</div>
+<div id="tabs-250" class="dropdown">
+    <%= simple_form_for @tl_image, :html => { :multipart => true } do |f| %>
+    <%= f.label :photo %>
+    <%= f.file_field :photo %>
     <%= f.submit "Submit" %>
-  </div>
-  <input name="image" id="image_checkbox" type="checkbox" value="yes" />Image &nbsp;
-<% end %>
+  <% end %>
+</div>
+
+
+<script>
+  $('.perkdrop').change(function () {
+    $('.dropdown').slideUp();
+    if ($(this).is(':checked')) {
+
+  $(this).parent().next().slideToggle("normal");
+    }
+  });
+</script> 
+
+
+
+<!-- //   $('input[type="radio"]').on('change', function () {
+//     $('#' + this.name + 'post').slideToggle(this.checked)
+//     $(this).siblings('input').prop('checked', false);
+//   });
+ -->
+
