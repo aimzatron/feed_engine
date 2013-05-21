@@ -2,7 +2,6 @@
   <div class="text-post-box">
     <div class="user-thumbnail">
     </div><!--end of .user-thumbnail -->
-      <%= render "user_details", :feed => feed %>
-      <%= feed.content %>
+      <%=raw feed.html %>
   </div><!--end of .text-post-box -->
 </div><!--end of .item text-post -->

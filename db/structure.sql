@@ -92,7 +92,8 @@ CREATE TABLE feed_items (
     photo_file_name character varying(255),
     photo_content_type character varying(255),
     photo_file_size integer,
-    photo_updated_at timestamp without time zone
+    photo_updated_at timestamp without time zone,
+    api_created_at timestamp without time zone
 );
 
 
@@ -247,3 +248,5 @@ INSERT INTO schema_migrations (version) VALUES ('20130515173030');
 INSERT INTO schema_migrations (version) VALUES ('20130517153856');
 
 INSERT INTO schema_migrations (version) VALUES ('20130517235950');
+
+INSERT INTO schema_migrations (version) VALUES ('20130521160841');

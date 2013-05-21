@@ -1,0 +1,3 @@
+class SoundcloudAuth < Authorization
+
+end

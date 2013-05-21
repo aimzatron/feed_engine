@@ -21,18 +21,22 @@ class LastfmTopTrack < FeedItem
 
     lastfm_username = lastfm.user.get_info["name"]
 
-    top_tracks = lastfm.user.get_top_tracks(lastfm_username).first(9)
+    top_tracks = lastfm.user.get_top_tracks(lastfm_username).first(7)
+    date = DateTime.now
 
     top_tracks.each do |track|
       if track["image"]
-        user.lastfm_top_tracks.create(data: {
-          "artist"    => track["artist"]["name"],
-          "name"      => track["name"],
-          "rank"      => track["rank"],
-          "playcount" => track["playcount"],
-          "image_url" => track["image"][3]["content"]
-        })
+        user.lastfm_top_tracks.create(
+          api_created_at: date,
+          data: {
+            "artist"    => track["artist"]["name"],
+            "name"      => track["name"],
+            "rank"      => track["rank"],
+            "playcount" => track["playcount"],
+            "image_url" => track["image"][3]["content"]
+          })
       end
+      date -= 1
     end
   end
 

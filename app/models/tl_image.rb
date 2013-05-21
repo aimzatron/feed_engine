@@ -3,9 +3,10 @@ class TlImage < FeedItem
   validates_presence_of :photo
 
   def self.create_from_form(input)
-    create! do |tl_image|
-      tl_image.data["content"] = input["content"]
-    end
+    create(
+      data: input,
+      api_created_at: DateTime.now
+    )
   end
 
   def valid_attrs

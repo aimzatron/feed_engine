@@ -25,6 +25,7 @@
         <h1><b>Personal Profile</b></h1>
         <p>I love TuneLine yes I do</p>
         <p><%= link_to "Link to LastFM", "/auth/lastfm" %></p>
+        <p><%= link_to "Link to Soundcloud", approve_soundcloud_auth_path(current_user.id), method: :post %></p>
       <div> <!--end of #personal-profile -->
       <div id="user-posting">
         <h2>Post to your feed:</h2>
@@ -32,7 +33,7 @@
         <%= render 'user_post' %>
 
       </div> <!--end of #user-postin -->
-     
+
     </div> <!--end of #innertube -->
   </div><!--end of #leftcolumn -->
 </div> <!--end of #maincontainer -->
