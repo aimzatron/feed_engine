@@ -7,7 +7,8 @@
           <div id="login">
             <% if current_user %>
               Signed in as <%= current_user.name %>!
-              <%= link_to "Go to my page", root_url(subdomain: current_user.subdomain) %>
+              <%= link_to "My Account", myaccount_path %>
+              <%= link_to "My Feed", root_url(subdomain: current_user.subdomain) %>
               <%= link_to "Sign out", signout_path %>
               <!-- render template for header nav -->
             <% else %>

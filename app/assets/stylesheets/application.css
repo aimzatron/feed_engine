@@ -289,7 +289,7 @@ margin-top: 0;
 
 #integration-info {
   margin: 10px;
-  padding-top: 20px;
+  padding-top: 5px;
   height: 60px;
   background: #e5e5e5;
   text-align: center;
@@ -297,22 +297,32 @@ margin-top: 0;
 
 #integration-outer-container {
   margin: 10px;
-  height: 270px;
+  height: 370px;
   background: #e5e5e5;
 }
 
 #integration-inner-container {
   margin: 10px;
-  height: 260px;
+  height: 350px;
   background: #ff5763;
 }
 
-.integration-container {
-  float: left;
-  margin: 18px 10px 10px 10px;
+.integration-container-1 {
+  float: right;
+  margin: 10px 230px 10px 10px;
   width: 210px;
   height: 225px;
   background: #e5e5e5;
+  position: relative;
+}
+
+.integration-container-2 {
+  float: left;
+  margin: 10px 10px 100px 230px;
+  width: 210px;
+  height: 225px;
+  background: #e5e5e5;
+  position: absolute;
 }
 
 .integration-header {
@@ -354,19 +364,19 @@ margin-top: 0;
 
 #account-details-outer-container {
   margin: 10px;
-  height: 230px;
+  height: 250px;
   background: #e5e5e5;
 }
 
 #account-details-inner-container {
   margin: 10px;
-  height: 220px;
+  height: 230px;
   background: #ff5763;
   display: block-inline;
 }
 
 #account-details-header {
-  margin:5px;
+  margin:15px;
   height: 40px;
   width: 910px;
   background: #e5e5e5;
@@ -376,13 +386,17 @@ margin-top: 0;
 
 #account-details-content {
   margin: 5px;
-  height: 120px;
+  height: 160px;
   width: 910px;
   background: #e5e5e5;
 }
 
 #account-details-content h3 {
-  padding: 10px 5px 5px 10px;
+  padding: 10px 7px 5px 10px;
+}
+
+#account-details-image {
+  padding: 8px 7px 5px 10px;
 }
 
 #account-buttons-container {

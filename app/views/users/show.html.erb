@@ -23,8 +23,8 @@
     <div class="innertube">
       <div id="personal-profile">
         <h1><b>Personal Profile</b></h1>
+        <%= image_tag current_user.image_url %>
         <p>I love TuneLine yes I do</p>
-        <p><%= link_to "Link to LastFM", "/auth/lastfm" %></p>
       <div> <!--end of #personal-profile -->
       <div id="user-posting">
         <h2>Post to your feed:</h2>

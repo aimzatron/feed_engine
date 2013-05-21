@@ -8,7 +8,7 @@
     <%= csrf_meta_tags %>
     <script src="http://connect.soundcloud.com/sdk.js"></script>
   <body>
-    <div id="maincontainer">
+    <div id="maincontainer" >
       <div id="topsection">
         <div class="innertube">
           <div id="logo">
@@ -16,9 +16,10 @@
           </div>
           <div id="login">
             <% if current_user %>
-                <%= current_user.name %>!
-                <%= link_to "Profile Page", root_url(subdomain: current_user.subdomain) %>
-                <%= link_to "Sign out", signout_path %>
+              Signed in as <%= current_user.name %>!
+              <%= link_to "My Account", myaccount_path %>
+              <%= link_to "My Feed", root_url(subdomain: current_user.subdomain) %>
+              <%= link_to "Sign out", signout_path %>
               <!-- render template for header nav -->
             <% else %>
               <%= link_to "Sign in with Twitter", "/auth/twitter" %>

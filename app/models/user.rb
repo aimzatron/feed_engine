@@ -1,5 +1,4 @@
 class User < ActiveRecord::Base
-
   has_many :feed_items
   has_many :tl_texts
   has_many :tl_images
@@ -20,6 +19,7 @@ class User < ActiveRecord::Base
     @user = create! do |user|
       user.uid = auth["uid"]
       user.name = name
+      user.image_url = auth["info"]["image"]
       user.subdomain = name.downcase.gsub('_','-')
     end
     @user.twitter_auths.create_from_omniauth(auth["credentials"]["token"], auth["credentials"]["secret"], @user.id, "twitter")
