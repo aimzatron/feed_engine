@@ -22,3 +22,6 @@
 #Ignore AWS config
 /config/s3.yml
 /app/fixtures.yml
+
+#Rubymine files
+/.idea
