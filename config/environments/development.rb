@@ -39,12 +39,12 @@ FeedEngine::Application.configure do
 
   #Paperclip settings
   config.paperclip_defaults = {
-    :storage => :s3,
-    :s3_credentials => {
-      :bucket => 'tl_images',
-      :access_key_id => 'AKIAJ6WNNJP26WT5XVVA',
-      :secret_access_key => '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'
-    }
+      :storage => :s3,
+      :s3_credentials => {
+          :bucket => 'tl_images',
+          :access_key_id => "#{@fixture.aws.access_key_id}",
+          :secret_access_key => "#{@fixture.aws.secret_access_key}"
+      }
   }
   
   ENV["REDISTOGO_URL"] = 'redis://localhost:6379'

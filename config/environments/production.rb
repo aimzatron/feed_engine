@@ -69,8 +69,8 @@ FeedEngine::Application.configure do
     :storage => :s3,
     :s3_credentials => {
       :bucket => 'tl_images',
-      :access_key_id => 'AKIAJ6WNNJP26WT5XVVA',
-      :secret_access_key => '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'
+      :access_key_id => "#{@fixture.aws.access_key_id}",
+      :secret_access_key => "#{@fixture.aws.secret_access_key}"
     }
   }
 end

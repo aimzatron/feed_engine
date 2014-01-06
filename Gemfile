@@ -20,7 +20,7 @@ group :development, :test do
   gem 'selenium-webdriver', '2.31.0'
 end
 
-gem "figaro"
+gem 'figaro'
 gem 'activerecord-postgres-hstore'
 gem 'twitter'
 gem 'pg'

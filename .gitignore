@@ -18,3 +18,7 @@
 /config/application.yml
 .DS_Store
 .structure.sql
+
+#Ignore AWS config
+/config/s3.yml
+/app/fixtures.yml
